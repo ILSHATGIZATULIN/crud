@@ -19,12 +19,15 @@ Route::get('/', function () {    return view('index');})->name('index');
 
 Route::get('/contacts', function () {    return view('static/contacts');})->name('contacts');
 
-Route::get('/admin', function () {    return view('layouts/admin');})->name('admin');
-Route::get('/login', function () {    return view('auth/login');})->name('login');
+Route::get('/admin', function () {    return view('layouts/admin');})->name('admin1');
 
-Route::get('/register', function () {    return view('auth/register');})->name('register');
 
-Route::resource('admin-lte','Product');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix'=> '/admin', ], function() {
+
+    Route::get('/', 'Admin\AdminController@index')->name('admin');
+
+
+    Route::resource('product', 'ProductController');
+});

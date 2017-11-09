@@ -9,15 +9,13 @@
         {{Form::text('title',null, ['class' => 'form-control'])}}
     </div>
 
-
-
-        <div class="col-md-9">
-            {{ Form::label('description', 'Описание') }}
-            <input type="text" class="form-control" name="description" value="<?= $product['description'] ?>" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Цена</label>
-            <input type="text" class="form-control" name="price" value="<?= $product['price'] ?>" required>
-        </div>
+    <div class="col-md-9">
+        {{ Form::label('description', 'Описание') }}
+        <input type="text" class="form-control" name="description" value="<?= $product['description'] ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Цена</label>
+        <input type="text" class="form-control" name="price" value="<?= $product['price'] ?>" required>
+    </div>
     {!! Form::close() !!}
 @stop
