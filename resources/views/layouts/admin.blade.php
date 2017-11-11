@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-@yield('content')
+
 <div class="wrapper">
 
     <header class="main-header">
@@ -59,6 +59,7 @@
             </a>
 
             <div class="navbar-custom-menu">
+
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
 
@@ -122,6 +123,7 @@
         <section class="sidebar">
             <!-- Sidebar user panel -->
             <div class="user-panel">
+
                 <div class="pull-left image">
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
@@ -199,13 +201,14 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-
+        @yield('content')
     </div>
 
     <!-- Main content -->
 
     <!-- /.content -->
 </div>
+
 <!-- /.content-wrapper -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -224,6 +227,7 @@
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
+
         <!-- Home tab content -->
         <div class="tab-pane" id="control-sidebar-home-tab">
             <h3 class="control-sidebar-heading">Recent Activity</h3>

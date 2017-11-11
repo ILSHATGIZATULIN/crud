@@ -1,52 +1,73 @@
-@extends('layouts.admin')
 
-    <!--banner-->
-    <div class="banner-top">
-        <div class="container">
-            <h1>Login</h1>
-            <em></em>
-            <h2><a href="{{route('admin')}}">Home</a><label>/</label>Login</h2>
-        </div>
-    </div>
-    <!--login-->
+
+
+
+@extends('layouts.client')
+
+@section('content')
     <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Login</div>
 
-        <div class="login">
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
 
-            <form>
-                <div class="col-md-6 login-do">
-                    <div class="login-mail">
-                        <input type="text" placeholder="Email" required="">
-                        <i  class="glyphicon glyphicon-envelope"></i>
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        Forgot Your Password?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="login-mail">
-                        <input type="password" placeholder="Password" required="">
-                        <i class="glyphicon glyphicon-lock"></i>
-                    </div>
-                    <a class="news-letter " href="#">
-                        <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-                    </a>
-                    <label class="hvr-skew-backward">
-                        <input type="submit" value="login">
-                    </label>
                 </div>
-                <div class="col-md-6 login-right">
-                    <h3>Completely Free Account</h3>
-
-                    <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio
-                        libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
-                    <a href="register.blade.php" class=" hvr-skew-backward">Register</a>
-
-                </div>
-
-                <div class="clearfix"> </div>
-            </form>
+            </div>
         </div>
-
     </div>
-
-    <!--//login-->
-
-
-
-
+@endsection
