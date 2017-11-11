@@ -6,8 +6,8 @@
 
             <h1>Создать товар</h1>
             {!!Form::open(['route' => 'product.store'])!!}
+            {!! Form::model($product, ['route' => ['product.update', $product]]) !!}
 
-            {!! csrf_field() !!}
 
             <h2> Название</h2> <input type="text" placeholder="Название" name="title">
             <h2>Описание</h2> <input type="text" placeholder="Описание" name="description">
