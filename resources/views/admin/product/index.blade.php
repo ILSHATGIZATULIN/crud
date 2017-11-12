@@ -15,7 +15,7 @@
                 <p>Нет товаров</p>
 
             @endforelse
-            <a href="{{ route(('product.edit'), $product->id )}}" class="btn btn-primary">Редактировать</a>
+            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Редактировать</a>
         </div>
     </div>
 

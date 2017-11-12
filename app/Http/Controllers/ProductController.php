@@ -45,7 +45,8 @@ class ProductController extends Controller
     {
         $product = new Product($request->all());
         $product->save();
-        return redirect()->route('product.index');
+        $request->session()->flash('success', 'Запись сохранена!');
+        return redirect()->route('product.index', $product->id);
     }
 
     /**
@@ -67,8 +68,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $products = Product::all($id);
-        return view('admin.product.edit', compact('products'));
+        $products = Product::find($id);
+        return view('admin.product.edit')->withProduct($products);
     }
 
     /**
@@ -81,7 +82,16 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
+        $product = Product::find($id);
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->save();
+        $request->session()->flash('success', 'Успешно сохранено!');
+
+        return redirect()->route('product.index', $product->id);
     }
+
 
     /**
      * Remove the specified resource from storage.
