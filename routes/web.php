@@ -30,4 +30,6 @@ Route::group(['prefix'=> '/admin', ], function() {
 
 
     Route::resource('product', 'ProductController');
+
+    Route::resource('review', 'ReviewController');
 });

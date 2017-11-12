@@ -163,10 +163,11 @@
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="#"/>
                         <i class="fa fa-product-hunt"></i>
                         <span>Товары</span>
-                        <span class="pull-right-container">
+                <li><a href="admin/product/create"><i class="fa fa-circle-o"></i>отзыв</a></li>
+                    <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
@@ -202,6 +203,8 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         @yield('content')
+        @yield('review')
+
     </div>
 
     <!-- Main content -->

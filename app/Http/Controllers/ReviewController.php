@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -13,8 +14,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+        return view('admin.review.index', compact('reviews'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +26,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.review.create');
     }
 
     /**
@@ -34,8 +37,11 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = new Review($request->all());
+        $review->save();
+        return redirect()->route('review.index');
     }
+
 
     /**
      * Display the specified resource.
