@@ -15,7 +15,7 @@
                 <p>Нет отзывов</p>
 
             @endforelse
-
+            <a href="{{ route('review.edit', $review->id) }}" class="btn btn-primary">Редактировать</a>
         </div>
     </div>
 

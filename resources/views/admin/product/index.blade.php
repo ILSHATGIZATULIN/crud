@@ -16,6 +16,11 @@
 
             @endforelse
             <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Редактировать</a>
+            {{ Form::open(['method' => 'DELETE', 'route' => 'admin.destroy', $product->id]) }}
+            {{ Form::hidden('id', $product->id) }}
+            {{ Form::submit('Удалить', ['class' => 'btn btn-danger']) }}
+            {{ Form::close() }}
+
         </div>
     </div>
 

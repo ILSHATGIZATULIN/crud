@@ -62,7 +62,8 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reviews = Review::find($id);
+        return view('admin.review.edit')->withReview($reviews);
     }
 
     /**
@@ -74,8 +75,16 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        $review->name = $request->name;
+        $review->phone = $request->phone;
+        $review->text = $request->text;
+        $review->save();
+        $request->session()->flash('success', 'Успешно сохранено!');
+
+        return redirect()->route('review.index', $review->id);
     }
+
 
     /**
      * Remove the specified resource from storage.

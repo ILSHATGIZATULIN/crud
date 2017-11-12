@@ -22,6 +22,7 @@ Route::get('/contacts', function () {    return view('static/contacts');})->name
 Route::get('/admin', function () {    return view('layouts/admin');})->name('admin1');
 
 
+
 Auth::routes();
 
 Route::group(['prefix'=> '/admin', ], function() {

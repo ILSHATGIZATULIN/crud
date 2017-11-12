@@ -166,7 +166,7 @@
                     <a href="#"/>
                         <i class="fa fa-product-hunt"></i>
                         <span>Товары</span>
-                <li><a href="admin/product/create"><i class="fa fa-circle-o"></i>отзыв</a></li>
+                <li><a href=" {{route('product.create')}} "><i class="fa fa-circle-o"></i>Товары добавить</a></li>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -177,8 +177,8 @@
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>Другое</span>
+                    <a href="{{route('review.create')}}">
+                        <i class="fa fa-edit"></i> <span>Добавить отзывы</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
