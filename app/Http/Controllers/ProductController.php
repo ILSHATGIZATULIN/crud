@@ -57,7 +57,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product= new Product();
+        return view('admin.product.show')->withProduct($product);
     }
 
     /**
@@ -101,6 +102,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product=Product::find($id);
+        $product->delete();
+        return view('admin.product.show');
     }
 }

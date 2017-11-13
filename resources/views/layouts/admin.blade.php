@@ -163,7 +163,7 @@
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"/>
+                    <a href="{{route('product.store')}}"/>
                         <i class="fa fa-product-hunt"></i>
                         <span>Товары</span>
                 <li><a href=" {{route('product.create')}} "><i class="fa fa-circle-o"></i>Товары добавить</a></li>
@@ -198,7 +198,7 @@
         </section>
         <!-- /.sidebar -->
     </aside>
-
+@yield('product')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

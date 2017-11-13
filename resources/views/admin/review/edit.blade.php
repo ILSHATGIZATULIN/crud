@@ -11,7 +11,7 @@
 
             <h2> Ваше имя</h2> <input type="text" placeholder="Ваше имя" name="name">
             <h2>Номер телефона</h2> <input type="text" placeholder="Номер телефона" name="phone">
-            <h2>Текст отзыва</h2> <input type="text" placeholder="Отзыв" name="text">
+            <h2>Текст отзыва</h2> {{ Form::textarea('text')}}
             <button class="btn btn-primary" type="submit">Исправить отзыв</button>
 
         </div>
