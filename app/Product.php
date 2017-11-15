@@ -8,6 +8,11 @@ class Product extends Model
 {
 
 
-    protected $fillable = ['title', 'description', 'image_url','price'];
+    protected $fillable = ['title', 'description', 'image_url', 'price'];
 
+
+    public function getImageAttribute()
+    {
+        return asset('storage/' . $this->image_url);
+    }
 }

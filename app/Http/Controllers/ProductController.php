@@ -43,10 +43,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $imagePath = $request->file('image')->store('public.products');
         $product = new Product($request->all());
+        $product->image_url = $imagePath;
         $product->save();
         $request->session()->flash('success', 'Запись сохранена!');
-        return redirect()->route('product.index', $product->id);
+        return redirect()->route('product.index');
     }
 
     /**

@@ -5,15 +5,15 @@
         <div class="row">
 
             <h1>Создать товар</h1>
-            {!!Form::open(['route' => 'product.store'])!!}
-
+            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
             {!! csrf_field() !!}
 
-            <h2> Название</h2> <input type="text" placeholder="Название" name="title">
-            <h2>Описание</h2> <input type="text" placeholder="Описание" name="description">
-            <h2>Цена</h2>{{ Form::text('price')}}
-            <button class="btn btn-primary" type="submit">Создать</button>
-
+            Название <input type="text" name="title"> <br>
+            Описание <input type="text" name="description"><br>
+            Цена <input type="text" name="price"><br>
+            Изображение <input type="file" id = "image" name="image">
+            <button type="submit">Создать</button><br>
+            </form>
         </div>
     </div>
 

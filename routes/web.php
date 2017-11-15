@@ -25,6 +25,10 @@ Route::get('/admin', function () {    return view('layouts/admin');})->name('adm
 
 Auth::routes();
 
+Route::get('/', 'PageController@index')->name('index');
+
+Route::get('/contacts', 'PageController@contacts')->name('contacts');
+
 Route::group(['prefix'=> '/admin', ], function() {
 
     Route::get('/', 'Admin\AdminController@index')->name('admin');

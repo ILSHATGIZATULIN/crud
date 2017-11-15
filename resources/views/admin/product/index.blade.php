@@ -4,26 +4,27 @@
     <div class="container" style=" margin-top: -1.4% " class="align-content-center">
 
         <div class="jumbotron" style=" background-color: aliceblue">
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <td>ID</td>
+
+                    <td>Название товара</td>
+                    <td>фото</td>
+                    <td>Описание</td>
+                    <td>Дата создания</td>
+                    <td>Перейти</td>
+                    <td>Редактировать</td>
+                    <td>Удалить</td>
+                </tr>
+                </thead>
+                <tbody>
             <h1>Товары</h1>
             <div class="row">
                 <div style="margin-top: 20px">
                     <div class="col-md-12">
-                        <table class="table">
 
-                            <thead>
-                            <tr>
-                                <td>ID</td>
-
-                                <td>Название товара</td>
-                                <td>фото</td>
-                                <td>Описание</td>
-                                <td>Дата создания</td>
-                                <td>Перейти</td>
-                                <td>Редактировать</td>
-                                <td>Удалить</td>
-                            </tr>
-                            </thead>
-                            <tbody>
                             @forelse($products as $product)
 
                                 <h4>{{ $product->title }}</h4>
