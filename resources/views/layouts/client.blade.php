@@ -1,10 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,13 +44,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-
 <!--header-->
 <div class="header">
     <div class="container">
         <div class="head">
             <div class=" logo">
-                <a href="{{route('index')}}"><img src="images/logo.png" alt=""></a>
+                <a href="{{ route('index') }}"><img src="/images/logo.png" alt=""></a>
             </div>
         </div>
     </div>
@@ -65,8 +57,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="col-sm-5 col-md-offset-2  header-login">
                 <ul >
-                    <li><a href="{{route('login')}}">Логин</a></li>
-                    <li><a href="{{route('register')}}">Register</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                 </ul>
             </div>
@@ -105,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav nav_1">
-                            <li><a class="color" href="{{route('index')}}">Главная</a></li>
+                            <li><a class="color" href="{{ route('index') }}">Главная</a></li>
 
                             <li class="dropdown mega-dropdown active">
                                 <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>
@@ -165,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </div>
                                         <div class="col1 col5">
-                                            <img src="images/me.png" class="img-responsive" alt="">
+                                            <img src="/images/me.png" class="img-responsive" alt="">
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -230,16 +222,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </div>
                                         <div class="col1 col5">
-                                            <img src="images/me1.png" class="img-responsive" alt="">
+                                            <img src="/images/me1.png" class="img-responsive" alt="">
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </li>
-                            <li><a class="color3" href="product.html">Sale</a></li>
+                            <li><a class="color3" href="/product.html">Sale</a></li>
                             <li><a class="color4" href="404.html">About</a></li>
                             <li><a class="color5" href="typo.html">Short Codes</a></li>
-                            <li ><a class="color6" href="{{route('contacts')}}">Контакты</a></li>
+                            <li ><a class="color6" href="{{ route('contacts') }}">Контакты</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
@@ -257,7 +249,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a href="checkout.html">
                         <h3> <div class="total">
                                 <span class="simpleCart_total"></span></div>
-                            <img src="images/cart.png" alt=""/></h3>
+                            <img src="/images/cart.png" alt=""/></h3>
                     </a>
                     <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
@@ -265,7 +257,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"> </div>
 
                 <!----->
-
                 <!---pop-up-box---->
                 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
                 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
@@ -292,7 +283,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             removalDelay: 300,
                             mainClass: 'my-mfp-zoom-in'
                         });
-
                     });
                 </script>
                 <!----->
@@ -307,7 +297,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="footer-middle">
         <div class="container">
             <div class="col-md-3 footer-middle-in">
-                <a href="{{route('index')}}"><img src="images/log.png" alt=""></a>
+                <a href="index.html"><img src="/images/log.png" alt=""></a>
                 <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
             </div>
 
@@ -322,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="in in1">
                     <li><a href="#">Order History</a></li>
                     <li><a href="wishlist.html">Wish List</a></li>
-                    <li><a href="{{route('login')}}">Логин</a></li>
+                    <li><a href="login.html">Login</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
@@ -379,4 +369,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </body>
 </html>
-

@@ -1,4 +1,3 @@
-
 @extends('layouts.client')
 
 @section('title', 'Главная')
@@ -115,7 +114,7 @@
                         <div class="col-md-3 item-grid simpleCart_shelfItem">
                             <div class=" mid-pop">
                                 <div class="pro-img">
-                                    <img src="{{ $product->image }}" class="img-responsive" alt="">
+                                    <img src="images/pc1.jpg" class="img-responsive" alt="">
                                     <div class="zoom-icon ">
                                         <a class="picture" href="images/pc1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
                                         <a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
@@ -128,16 +127,26 @@
                                             <h6><a href="single.html">{{ $product->title }}</a></h6>
                                         </div>
                                         <div class="img item_add">
-                                            <a href="#"><img src="images/ca.png" alt=""></a>
+
+                                            {{--<a href="#"></a>--}}
                                         </div>
+
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="mid-2">
+                                    <div class="col-3">
                                         <p ><em class="item_price">{{ $product->price }} РУБ</em></p>
                                         <div class="block">
                                             <div class="starbox small ghosting"> </div>
                                         </div>
-
+                                        <form action="{{ route('order.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            Имя <input type="text" name="name">
+                                            Телефон <input type="text" name="phone">
+                                            email <input type="text" name="email">
+                                            Адрес <input type="text" name="adress">
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                            <button type="submit"><img src="/images/ca.png" alt=""></button>
+                                        </form>
                                         <div class="clearfix"></div>
                                     </div>
 
@@ -172,15 +181,3 @@
     </div>
     <!--//content-->
 @stop
-© 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About

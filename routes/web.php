@@ -29,6 +29,8 @@ Route::get('/', 'PageController@index')->name('index');
 
 Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
+Route::get('/product/{product}','PageController@showProduct')->name('show.product');
+
 Route::group(['prefix'=> '/admin', ], function() {
 
     Route::get('/', 'Admin\AdminController@index')->name('admin');
@@ -38,3 +40,10 @@ Route::group(['prefix'=> '/admin', ], function() {
 
     Route::resource('review', 'ReviewController');
 });
+
+//Route::group(['prefix'=> '/order', ], function() {
+//
+//    Route::post('store', 'OrderController@store')->name('order.store');
+
+//});
+Route::resource('order', 'OrderController');

@@ -20,10 +20,10 @@
                 </tr>
                 </thead>
                 <tbody>
-            <h1>Товары</h1>
-            <div class="row">
-                <div style="margin-top: 20px">
-                    <div class="col-md-12">
+                <h1>Товары</h1>
+                <div class="row">
+                    <div style="margin-top: 20px">
+                        <div class="col-md-12">
 
                             @forelse($products as $product)
 
@@ -37,17 +37,21 @@
                             @endforelse
 
 
-                            <a href="{{ route('product.edit', $product->id) }}"
-                               class="btn btn-primary">Редактировать</a>
+                            {{--<a href="{{ route('product.edit', $product->id) }}"--}}
+                               {{--class="btn btn-primary">Редактировать</a>--}}
 
 
-                        {{--{{ Form::open(['method' => 'DELETE', 'route' => 'product.destroy', $product->id]) }}--}}
-                        {{--{{ Form::submit('Удалить', ['class' => 'btn btn-danger']) }}--}}
-                        {{--{{ Form::close() }}--}}
+                            {{--{{ Form::open(['method' => 'DELETE', 'route' => 'product.destroy', $product->id]) }}--}}
+                            {{--{{ Form::submit('Удалить', ['class' => 'btn btn-danger']) }}--}}
+                            {{--{{ Form::close() }}--}}
 
+                        </div>
                     </div>
                 </div>
-            </div>
+                </tbody>
+            </table>
+
         </div>
+    </div>
     </div>
 @stop

@@ -23,4 +23,11 @@ class PageController extends Controller
     {
         return view('pages.contacts');
     }
+
+    public function showProduct(product $product)
+    {
+
+        return view('pages.showProduct', compact('product'));
+    }
+
 }
